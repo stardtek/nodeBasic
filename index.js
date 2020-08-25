@@ -3,7 +3,7 @@ console.log('Server-side code running');
 const express = require('express');
 
 const app = express();
-
+let path = require('path');
 
 // serve files from the public directory
 app.use(express.static('public'));
@@ -17,6 +17,13 @@ app.listen(8080, () => {
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/test.html');
 });
+
+app.get('/dodaj', (req, res) => {
+  res.sendFile(__dirname + '/public/dodaj.html');
+});
+
+
+
 function sendRequest(){
 
 
